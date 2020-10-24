@@ -24,8 +24,8 @@ for alkio in db[table_name]:
 #Timeloop, 
 t1 = Timeloop()
 
-#Timeloop tehtävä, suoritetaan joka 15s
-@t1.job(interval=timedelta(seconds=15))
+#Timeloop tehtävä, suoritetaan joka 60s
+@t1.job(interval=timedelta(seconds=60))
 def measure():
     temp = None
     humidity = None
