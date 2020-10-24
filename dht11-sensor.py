@@ -6,7 +6,7 @@ import board
 from timeloop import Timeloop
 
 #muuttujia
-sensor_id = None #Vaihda tämä joksikin 500-15000 välillä
+sensor_id = !"#! #Laita tähän joku luku 500-15000 välillä
 db_name = 'testi'
 table_name = 'sensor_data'
 
