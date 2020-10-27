@@ -1,47 +1,46 @@
 <!DOCTYPE html>
 <html lang="fi">
-<head>
-<title>Page Title</title>
-<meta charset="UTF-8">
-
-<link href="paasivu.css" rel="StyleSheet" type="text/css" />
-
-
+<head> 
+  <script var piato = JSON.parse('Piato.json')></script>
+  <script src="paasivu.js"></script>
+  <link href="paasivu.css" rel="StyleSheet" type="text/css"/>
+  <meta charset="utf-8"/>
 </head>
+<title>Page Title</title>
+
 <body>
-<button type="button" class="collapsible">PIATO</button>
-<div class="content">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<button type="button" class="collapsible" id="buttonPiato" >PIATO</button>
+<div class="piato" id="divPiato">
 </div>
-<button type="button" class="collapsible">MAIJA</button>
-<div class="content">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<button type="button" class="collapsible" id="buttonMaija">MAIJA</button>
+<div class="content" id="divMaija">
+  
 </div>
-<button type="button" class="collapsible">LOZZI</button>
-<div class="content">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<button type="button" class="collapsible" id="buttonLozzi">LOZZI</button>
+<div class="content" id="divLozzi">
+ 
 </div>
 <button type="button" class="collapsible">TESTAILULAATIKKO</button>
-<div class="content">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<div class="content" id="divTESTAILULAATIKKO">
+  
 </div>
 
 <script>
-var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
-}
-</script>
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+  
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  }
+  </script>
 
 </body>
 </html>

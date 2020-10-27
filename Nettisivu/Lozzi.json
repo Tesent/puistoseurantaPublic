@@ -1,0 +1,265 @@
+{
+  "RestaurantName": "Ravintola Lozzi",
+  "RestaurantUrl": "https://www.semma.fi/ravintolat2/seminaarimaki/lozzi/",
+  "PriceHeader": null,
+  "Footer": "Vegaani ja gluteeniton vaihtoehto saatavilla päivittäin! Kysy lisätietoja henkilökunnaltamme. ",
+  "MenusForDays": [
+    {
+      "Date": "2020-10-27T00:00:00+01:00",
+      "LunchTime": "10:30 - 18:00",
+      "SetMenus": [
+        {
+          "SortOrder": 0,
+          "Name": "KASVISLOUNAS",
+          "Price": "2,80 / 5,20 / 5,80 / 7,90",
+          "Components": [
+            "Kikherne-kukkakaalicurrya (* ,G ,L ,M ,Veg ,VS)"
+          ]
+        },
+        {
+          "SortOrder": 0,
+          "Name": "KASVISKEITTO",
+          "Price": "2,80 / 5,20 / 5,80 / 7,90",
+          "Components": []
+        },
+        {
+          "SortOrder": 0,
+          "Name": "LOUNAS",
+          "Price": "2,80 / 5,20 / 5,80 / 7,90",
+          "Components": [
+            "Broileripizzaa BBQ (A ,VL ,VS)"
+          ]
+        },
+        {
+          "SortOrder": 0,
+          "Name": "LOUNAS",
+          "Price": "4,40 / 6,60 / 7,10 / 9,10",
+          "Components": [
+            "Paahdettuja lohkoperunoita (G ,L ,M ,Veg)",
+            "Alkaen 15:00 Kievin kanaa ja sienikastiketta A, L, VS ()"
+          ]
+        },
+        {
+          "SortOrder": 0,
+          "Name": "JÄLKIRUOKA",
+          "Price": "1,00",
+          "Components": [
+            "Puolukkavispipuuroa (A ,L ,M ,Veg)",
+            "Kauravaahtoa (A ,G ,L ,M ,Veg)"
+          ]
+        }
+      ]
+    },
+    {
+      "Date": "2020-10-28T00:00:00+01:00",
+      "LunchTime": "10:30 - 18:00",
+      "SetMenus": [
+        {
+          "SortOrder": 0,
+          "Name": "KASVISLOUNAS",
+          "Price": "2,80 / 5,20 / 5,80 / 7,90",
+          "Components": [
+            "Paneroidut kasvispihvit (* ,A ,G ,L)",
+            "Kurkkuraitaa (A ,G ,L ,VS)"
+          ]
+        },
+        {
+          "SortOrder": 0,
+          "Name": "KASVISKEITTO",
+          "Price": "2,80 / 5,20 / 5,80 / 7,90",
+          "Components": [
+            "Pinaattikeittoa (* ,A ,L)",
+            "Keitetty kananmuna (A ,G ,L ,M)"
+          ]
+        },
+        {
+          "SortOrder": 0,
+          "Name": "LOUNAS",
+          "Price": "2,80 / 5,20 / 5,80 / 7,90",
+          "Components": [
+            "Chili-kermaviilikastiketta (A ,G ,L)",
+            "Tandoori-broileritortillaa A, L, M ()"
+          ]
+        },
+        {
+          "SortOrder": 0,
+          "Name": "LOUNAS",
+          "Price": "2,80 / 5,20 / 5,80 / 7,90",
+          "Components": [
+            "Kirjolohta ja seitiä sekä kasviksia inkiväärikastikkeessa (* ,A ,G ,L ,M)"
+          ]
+        },
+        {
+          "SortOrder": 0,
+          "Name": "LOUNAS",
+          "Price": "4,40 / 6,60 / 7,10 / 9,10",
+          "Components": [
+            "Alkaen 15:00 Falafelhotdog chimichurrisalsalla (A ,L ,VS)",
+            "Lohkoperunoita (G ,L ,M ,Veg)"
+          ]
+        },
+        {
+          "SortOrder": 0,
+          "Name": "JÄLKIRUOKA",
+          "Price": "1,00",
+          "Components": [
+            "Hedelmärahkaa (A ,G ,L)"
+          ]
+        }
+      ]
+    },
+    {
+      "Date": "2020-10-29T00:00:00+01:00",
+      "LunchTime": "10:30 - 18:00",
+      "SetMenus": [
+        {
+          "SortOrder": 0,
+          "Name": "KASVISLOUNAS",
+          "Price": "2,80 / 5,20 / 5,80 / 7,90",
+          "Components": [
+            "Punajuuri-halloumilasagnettea (A ,VL)"
+          ]
+        },
+        {
+          "SortOrder": 0,
+          "Name": "LOUNAS",
+          "Price": "2,80 / 5,20 / 5,80 / 7,90",
+          "Components": [
+            "Lihamureketta (A ,L ,M)",
+            "Ruskeaa kastiketta (A ,L)",
+            "Perunasosetta (* ,A ,G ,L)"
+          ]
+        },
+        {
+          "SortOrder": 0,
+          "Name": "LOUNAS",
+          "Price": "2,80 / 5,20 / 5,80 / 7,90",
+          "Components": [
+            "Hapanimelää broilerikastiketta (* ,A ,G ,L ,M ,VS)"
+          ]
+        },
+        {
+          "SortOrder": 0,
+          "Name": "LOUNAS",
+          "Price": "4,40 / 6,60 / 7,10 / 9,10",
+          "Components": [
+            "Alkaen 15:00 Pepperonipannupizza (A ,L)"
+          ]
+        },
+        {
+          "SortOrder": 0,
+          "Name": "KEITTOLOUNAS",
+          "Price": "2,80 / 5,20 / 5,80 / 7,90",
+          "Components": [
+            "Lihakeittoa (* ,G ,L ,M)"
+          ]
+        },
+        {
+          "SortOrder": 0,
+          "Name": "JÄLKIRUOKA",
+          "Price": "1,00",
+          "Components": [
+            "Vohveleita (A)",
+            "Vadelmahilloa (G ,L ,M ,Veg)",
+            "Kermavaahtoa (A ,G ,L)"
+          ]
+        }
+      ]
+    },
+    {
+      "Date": "2020-10-30T00:00:00+01:00",
+      "LunchTime": "10:30 - 18:00",
+      "SetMenus": [
+        {
+          "SortOrder": 0,
+          "Name": "KASVISLOUNAS",
+          "Price": "2,80 / 5,20 / 5,80 / 7,90",
+          "Components": []
+        },
+        {
+          "SortOrder": 0,
+          "Name": "VEGAANINEN KASVISKEITTO",
+          "Price": "2,80 / 5,20 / 5,80 / 7,90",
+          "Components": [
+            "Palsternakkasosekeittoa (* ,A ,G ,L ,M ,Veg)"
+          ]
+        },
+        {
+          "SortOrder": 0,
+          "Name": "LOUNAS",
+          "Price": "2,80 / 5,20 / 5,80 / 7,90",
+          "Components": []
+        },
+        {
+          "SortOrder": 0,
+          "Name": "LOUNAS",
+          "Price": "2,80 / 5,20 / 5,80 / 7,90",
+          "Components": []
+        },
+        {
+          "SortOrder": 0,
+          "Name": "LOUNAS",
+          "Price": "4,40 / 6,60 / 7,10 / 9,10",
+          "Components": []
+        },
+        {
+          "SortOrder": 0,
+          "Name": "JÄLKIRUOKA",
+          "Price": "1,00",
+          "Components": []
+        },
+        {
+          "SortOrder": 0,
+          "Name": "HALLOWEEN BUFFA",
+          "Price": "2,80 / 5,20/ 5,80 / 7,90",
+          "Components": [
+            "Nakkeja, Lihapyöryköitä, Kasvipizzaa, Kasviskroketteja ()"
+          ]
+        }
+      ]
+    },
+    {
+      "Date": "2020-10-31T00:00:00+01:00",
+      "LunchTime": "12:00 - 16:00",
+      "SetMenus": [
+        {
+          "SortOrder": 0,
+          "Name": "KASVISLOUNAS",
+          "Price": "2,80 / 5,20 / 5,80 / 7,90",
+          "Components": []
+        },
+        {
+          "SortOrder": 0,
+          "Name": "LOUNAS",
+          "Price": "2,80 / 5,20 / 5,80 / 7,90",
+          "Components": []
+        }
+      ]
+    },
+    {
+      "Date": "2020-11-01T00:00:00+01:00",
+      "LunchTime": "12:00 - 16.00",
+      "SetMenus": [
+        {
+          "SortOrder": 0,
+          "Name": "KASVISLOUNAS",
+          "Price": "2,80 / 5,20 / 5,80 / 7,90",
+          "Components": []
+        },
+        {
+          "SortOrder": 0,
+          "Name": "LOUNAS",
+          "Price": "2,80 / 5,20 / 5,80 / 7,90",
+          "Components": []
+        },
+        {
+          "SortOrder": 0,
+          "Name": "LOUNAS",
+          "Price": "5,20 / 7,80 / 8,80 / 10,00",
+          "Components": []
+        }
+      ]
+    }
+  ],
+  "ErrorText": null
+}
