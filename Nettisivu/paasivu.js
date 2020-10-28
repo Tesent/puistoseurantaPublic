@@ -65,32 +65,31 @@ function addContex(json, urlI){
     aika.appendChild(aikaText)
     divAika.appendChild(aika)
 
+
     for(let j of k.SetMenus){
-      //Luodaan Lounaan nimi (Muotoa VEGETARIAN LUNCH / LUNCH / DESSERT)
-      var lunch = document.createElement("label");
-      var lunchText = document.createTextNode(j.Name);
-      lunch.appendChild(lunchText);
+      if(j.Components.length > 0){
+        //Luodaan Lounaan nimi (Muotoa VEGETARIAN LUNCH / LUNCH / DESSERT)
+        var lunch = document.createElement("label");
+        var lunchText = document.createTextNode(j.Name);
+        lunch.appendChild(lunchText);
       
-      var lunchDiv = document.createElement("div");
-      lunchDiv.appendChild(lunch);
-      divAika.appendChild(lunchDiv);
+        var lunchDiv = document.createElement("div");
+        lunchDiv.appendChild(lunch);
+        divAika.appendChild(lunchDiv);
 
-      for(let l of j.Components){
-        //Luodaan lounaalla tarjottavan ruuan div nimiä varten
-        var foodDiv = document.createElement("div");
+        for(let l of j.Components){
+          //Luodaan lounaalla tarjottavan ruuan div nimiä varten
+          var foodDiv = document.createElement("div");
 
-        //Ruuan nimi
-        var food = document.createElement("label");
-        var foodText = document.createTextNode(l)
-        food.appendChild(foodText);
+          //Ruuan nimi
+          var food = document.createElement("label");
+          var foodText = document.createTextNode(l)
+          food.appendChild(foodText);
 
-        foodDiv.appendChild(food);
-        lunchDiv.appendChild(foodDiv);
-        
-
-
+          foodDiv.appendChild(food);
+          lunchDiv.appendChild(foodDiv);
+        }
       }
-
     }
   }
 }
