@@ -1,24 +1,32 @@
+body {
+	background-image: url(./tausta);
+}
+
 .collapsible {
   background-color: #777;
   color: white;
   cursor: pointer;
-  padding: 18px;
-  width: 100%;
+  padding: 10px;
+  width: 20%;
   border: none;
   text-align: left;
   outline: none;
   font-size: 15px;
+
+  display: flex;
+  flex-direction: column;
 }
 
 
 .content {
-  padding: 0 18px;
   display: none;
+  padding: 0 0 0 10px;
+  width: 20%;
   overflow: hidden;
   background-color: #f1f1f1;
 }
 
-#divPiato, #divMaija, #divLizzo{
-  padding: 0 18px;
-  width: 20%;
+#divPiato, #divMaija, #divLozzi{
+  padding: 10 px;
+  width: 10%;
 }
