@@ -93,5 +93,102 @@ function addContex(json, urlI){
     }
   }
 }
+function naytaTilasto(ruokala, popup){
+  console.log(ruokala.attributes[1].value);
+  //var popupText = document.createElement("span");
+  //var ruokalaNimi = document.createTextNode(ruokala.attributes[1].value)
+  //popupText.appendChild(ruokalaNimi);
+  //popup.appendChild(popupText);
+  //popup.classList.toggle("show");
+
+  //Luodaan div:t popUp ikkunalle, sen headerille ja otsikolle
+  var popUp = document.createElement("div");
+  var popUpHeader = document.createElement("div");
+  var popUpTitle = document.createElement("div");
+  var popUpBody = document.createElement("div");
+
+  //Annetaan niille luokat ja id:t
+  popUp.setAttribute("class", "popUp");
+  popUp.setAttribute("id", "popUp");
+
+  popUpHeader.setAttribute("class", "popUp-header");
+
+  popUpTitle.setAttribute("class", "popUpTitle");
+
+  //Luodaan popUp:n otsikon teksti (HUOM! se on ruokalan nimi) 
+  var popUpTitleText = document.createTextNode(ruokala.attributes[1].value);
+  popUpTitle.appendChild(popUpTitleText);
+
+  //Luodaan popUp:n sulkemis nappi
+  var popUpCloseButton = document.createElement("button");
+ 
+
+  popUpCloseButton.setAttribute("class", "PopUpClose-button");
+  //popUpCloseButton.setAttribute("textContent", "X")
+  popUpCloseButton.textContent = 'x';
+
+  //Bodylle väliaikainen teksti
+  var placeHolderText = document.createTextNode("Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores consequatur fugiat dignissimos optio impedit accusantium error id corrupti, consequuntur deleniti ipsa, atque, quibusdam recusandae mollitia quisquam eum hic odio voluptatum illum provident laborum explicabo voluptates beatae? Ullam voluptate doloribus amet iste dignissimos perferendis unde, fugit reprehenderit corporis recusandae, ab quod. Repellat adipisci eum non corporis debitis soluta impedit minus, aperiam beatae quae, odio maxime recusandae dicta ipsa explicabo magnam veniam sed? Assumenda minima neque nesciunt placeat animi consequatur error beatae!");
+  popUpBody.appendChild(placeHolderText);
+
+  //popUpOverlay tulee ponnahdusikkunan taakse harmaaksi taustaksi jolla korostetaan visuaalisesti ponnahdusikkunaa
+  var popUpOverlay = document.createElement("div");
+  popUpOverlay.setAttribute("id", "popUpOverlay");
+  popUpOverlay.setAttribute("class", "active");
+
+  //Laitetaan headeriin otissko ja nappi
+  popUpHeader.appendChild(popUpTitle);
+  popUpHeader.appendChild(popUpCloseButton);
+
+  //Laitetaan header ensimmäisenä popUp:iin
+  popUp.appendChild(popUpHeader);
+
+  //Laitetaan ponnahdusikkunan body ponnahdusikkunaan
+  popUp.appendChild(popUpBody);
+
+  //Lisätään popUp ja popUpOverlay hmtl:n body:n
+  document.body.appendChild(popUp);
+  document.body.appendChild(popUpOverlay);
+
+  //Luodaan kuuntelija popUpCloseButton:lle jolla poistetaan popUp ja popUpOverlay
+  popUpCloseButton.addEventListener("click", function(){closePopUp()})
+
+
+}
+
+//Funktio poistaa html body:ä popUp ja popUpOverlay:n
+function closePopUp(){
+  document.body.removeChild(popUp)
+  document.body.removeChild(popUpOverlay);  
+}
+
+function taustaNapit(){
+var popup = document.createElement("div");
+
+var piato = document.getElementById("layer1");
+piato.appendChild(popup);
+piato.addEventListener("click", function(){naytaTilasto(piato, popup)});
+
+var maija = document.getElementById("layer3")
+maija.addEventListener("click", function(){naytaTilasto(maija)});
+
+var lozzi = document.getElementById("layer4")
+lozzi.addEventListener("click", function(){naytaTilasto(lozzi)});
+
+var ylistö = document.getElementById("layer5")
+ylistö.addEventListener("click", function(){naytaTilasto(ylistö)});
+
+var uno = document.getElementById("layer6")
+uno.addEventListener("click", function(){naytaTilasto(uno)});
+
+var tilia = document.getElementById("layer7")
+tilia.addEventListener("click", function(){naytaTilasto(tilia)});
+
+var ilokivi = document.getElementById("layer8")
+ilokivi.addEventListener("click", function(){naytaTilasto(ilokivi)});
+
+}
+
 getJson(urlI).then(() => {console.log('done')})
+window.onload = taustaNapit;
 //addContex(data);
