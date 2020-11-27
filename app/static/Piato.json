@@ -1,0 +1,214 @@
+ {
+    "RestaurantName": "Restaurant Piato",
+    "RestaurantUrl": "https://www.semma.fi/en/restaurants/mattilanniemi/restaurant-piato/",
+    "PriceHeader": null,
+    "Footer": null,
+    "MenusForDays": [
+      {
+        "Date": "2020-10-26T00:00:00+01:00",
+        "LunchTime": "10.30 - 14.30",
+        "SetMenus": [
+          {
+            "SortOrder": 0,
+            "Name": "VEGETARIAN LUNCH",
+            "Price": "2,80 / 5,80 / 7,90",
+            "Components": [
+              "Corn and quinoa patties (* ,A ,L ,M ,VS)",
+              "Vegan and gluten free: Chick pea and sweet potato stew ()"
+            ]
+          },
+          {
+            "SortOrder": 0,
+            "Name": "LUNCH",
+            "Price": "2,80 / 5,80 / 7,90",
+            "Components": [
+              "Oven-baked sausage stuffed with onion and cheese (A ,G ,L)",
+              "Milk free: Chicken sauce ()"
+            ]
+          },
+          {
+            "SortOrder": 0,
+            "Name": "LUNCH",
+            "Price": "5,20 / 8,80 / 9,10",
+            "Components": [
+              "Teriyaki rainbow trout and vegetable bake (A ,G ,L ,M ,VS)"
+            ]
+          },
+          {
+            "SortOrder": 0,
+            "Name": "DESSERT",
+            "Price": "1,00",
+            "Components": [
+              "Marshmallow and caramel curd dessert  (A, G, L) ()"
+            ]
+          }
+        ]
+      },
+      {
+        "Date": "2020-10-27T00:00:00+01:00",
+        "LunchTime": "10.30 - 14.30",
+        "SetMenus": [
+          {
+            "SortOrder": 0,
+            "Name": "VEGETARIAN LUNCH",
+            "Price": "2,80 / 5,80 / 7,90",
+            "Components": [
+              "Broad bean and macaroni casserole (* ,A ,L ,M ,Veg)"
+            ]
+          },
+          {
+            "SortOrder": 0,
+            "Name": "LUNCH",
+            "Price": "2,80 / 5,80 / 7,90",
+            "Components": [
+              "Madras chicken (A ,G ,L ,VS)"
+            ]
+          },
+          {
+            "SortOrder": 0,
+            "Name": "LUNCH",
+            "Price": "5,20 / 8,80 / 9,10",
+            "Components": [
+              "Roasted pork with mustard and chili (A ,G ,L ,M)"
+            ]
+          },
+          {
+            "SortOrder": 0,
+            "Name": "DESSERT",
+            "Price": "1,00",
+            "Components": [
+              "Strawberry and oat pie (A)"
+            ]
+          }
+        ]
+      },
+      {
+        "Date": "2020-10-28T00:00:00+01:00",
+        "LunchTime": "10.30 - 14.30",
+        "SetMenus": [
+          {
+            "SortOrder": 0,
+            "Name": "VEGETARIAN LUNCH",
+            "Price": "2,80 / 5,80 / 7,90",
+            "Components": [
+              "Quorn in tomato and vegetable sauce (* ,A ,G ,L ,M ,VS)"
+            ]
+          },
+          {
+            "SortOrder": 0,
+            "Name": "LUNCH",
+            "Price": "2,80 / 5,80 / 7,90",
+            "Components": [
+              "Minced meat tacos with sour cream (A ,G ,L ,VS)"
+            ]
+          },
+          {
+            "SortOrder": 0,
+            "Name": "LUNCH",
+            "Price": "5,20 / 8,80 / 9,10",
+            "Components": [
+              "Chicken fillet grilled with rosemary oil (* ,G ,L ,M)"
+            ]
+          },
+          {
+            "SortOrder": 0,
+            "Name": "DESSERT",
+            "Price": "1,00",
+            "Components": [
+              "Pancake (A ,L)",
+              "Strawberry jam (G ,L ,M ,Veg)"
+            ]
+          }
+        ]
+      },
+      {
+        "Date": "2020-10-29T00:00:00+01:00",
+        "LunchTime": "10.30 - 14.30",
+        "SetMenus": [
+          {
+            "SortOrder": 0,
+            "Name": "VEGETARIAN LUNCH",
+            "Price": "2,80 / 5,80 / 7,90",
+            "Components": [
+              "Indonesian Tahu goreng (A ,G ,L ,M ,Veg ,VS)"
+            ]
+          },
+          {
+            "SortOrder": 0,
+            "Name": "LUNCH",
+            "Price": "2,80 / 5,80 / 7,90",
+            "Components": [
+              "Turkey bolognaise pizza (* ,A ,L ,VS)"
+            ]
+          },
+          {
+            "SortOrder": 0,
+            "Name": "LUNCH",
+            "Price": "5,20 / 8,80 / 9,10",
+            "Components": [
+              "Feta-coated rainbow trout (* ,A ,G ,L ,VS)"
+            ]
+          },
+          {
+            "SortOrder": 0,
+            "Name": "DESSERT",
+            "Price": "1,00",
+            "Components": [
+              "Lime Panna Cotta (A ,G ,L)"
+            ]
+          }
+        ]
+      },
+      {
+        "Date": "2020-10-30T00:00:00+01:00",
+        "LunchTime": "10.30 - 14.30",
+        "SetMenus": [
+          {
+            "SortOrder": 0,
+            "Name": "VEGETARIAN LUNCH",
+            "Price": "2,80 / 5,80 / 7,90",
+            "Components": [
+              "Pumpkin and halloumi lasagnette (A ,VL)"
+            ]
+          },
+          {
+            "SortOrder": 0,
+            "Name": "LUNCH",
+            "Price": "2,80 / 5,80 / 7,90",
+            "Components": [
+              "Beef and beetroot patties (A ,L ,M)",
+              "Caper mayonnaise (A ,G ,L)"
+            ]
+          },
+          {
+            "SortOrder": 0,
+            "Name": "LUNCH",
+            "Price": "5,20 / 8,80 / 9,10",
+            "Components": [
+              "Black sausage (A ,L ,M)",
+              "Frankfurters (A ,G ,L ,M)"
+            ]
+          },
+          {
+            "SortOrder": 0,
+            "Name": "DESSERT",
+            "Price": "1,00",
+            "Components": [
+              "Chili and chocolate mousse (A ,G)"
+            ]
+          }
+        ]
+      },
+      {
+        "Date": "2020-10-31T00:00:00+01:00",
+        "LunchTime": null,
+        "SetMenus": []
+      },
+      {
+        "Date": "2020-11-01T00:00:00+01:00",
+        "LunchTime": null,
+        "SetMenus": []
+      }
+    ],
+    "ErrorText": null
+  }
