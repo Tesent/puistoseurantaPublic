@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, url_for, render_template
+from flask import Flask, url_for, render_template, request
 
 def create_app(test_config=None):
     # Create and configure the app
@@ -24,13 +24,18 @@ def create_app(test_config=None):
         # Oh oh
         pass
 
+    # database stuff
+    from . import db
+    db.init_app(app)
+
+    # Handling of data post
+    from . import post
+    app.register_blueprint(post.bp)
+
     # Simple test page
     @app.route('/')
     def hello():
         return render_template('Puistoseuranta.html')
 
-    # database stuff
-    from . import db
-    db.init_app(app)
 
     return app
