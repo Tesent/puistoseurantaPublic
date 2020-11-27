@@ -1,7 +1,6 @@
 import os
 
-from flask import Flask
-from flask import url_for
+from flask import Flask, url_for, render_template
 
 def create_app(test_config=None):
     # Create and configure the app
@@ -28,7 +27,7 @@ def create_app(test_config=None):
     # Simple test page
     @app.route('/')
     def hello():
-        return app.send_static_file('Puistoseuranta.html')
+        return render_template('Puistoseuranta.html')
 
     # database stuff
     from . import db

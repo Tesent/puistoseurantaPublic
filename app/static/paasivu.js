@@ -1,7 +1,7 @@
 "use strict"
 
 //let url = 'https://www.semma.fi/modules/json/json/Index?costNumber=1408&language=en'
-// 
+//
 //async function getData(url) {
 //  const response = await fetch(url);
 //
@@ -10,7 +10,7 @@
 //
 //const data = getData(url);
 
-let url = [['Piato.json','divPiato'],['Maija.json', 'divMaija'], ['Lozzi.json', 'divLozzi']];
+let url = [['/static/Piato.json','divPiato'],['/static/Maija.json', 'divMaija'], ['/static/Lozzi.json', 'divLozzi']];
 let urlI = 0;
 //Luodaan ruokalistalle viikonpäivän mukaan id
 let paivat = ["Maanantai", "Tiistai", "Keskiviikko", "Torstai", "Perjantai"];
@@ -31,7 +31,7 @@ async function getJson(urlI){
         urlI++;
       getJson(urlI);
       }
-      
+
 }
 
 
@@ -46,7 +46,7 @@ function addContex(json, urlI){
   ravintola.appendChild(nimi);
 
   for(let k of json.MenusForDays){
-    //Luodaan div päivämäärää varten 
+    //Luodaan div päivämäärää varten
     var divAika = document.createElement("div");
     //Asetetaan jokaiselle div:lle oma id
     divAika.setAttribute("id", paivat[paivatI]);
@@ -72,7 +72,7 @@ function addContex(json, urlI){
         var lunch = document.createElement("label");
         var lunchText = document.createTextNode(j.Name);
         lunch.appendChild(lunchText);
-      
+
         var lunchDiv = document.createElement("div");
         lunchDiv.appendChild(lunch);
         divAika.appendChild(lunchDiv);
@@ -115,13 +115,13 @@ function naytaTilasto(ruokala, popup){
 
   popUpTitle.setAttribute("class", "popUpTitle");
 
-  //Luodaan popUp:n otsikon teksti (HUOM! se on ruokalan nimi) 
+  //Luodaan popUp:n otsikon teksti (HUOM! se on ruokalan nimi)
   var popUpTitleText = document.createTextNode(ruokala.attributes[1].value);
   popUpTitle.appendChild(popUpTitleText);
 
   //Luodaan popUp:n sulkemis nappi
   var popUpCloseButton = document.createElement("button");
- 
+
 
   popUpCloseButton.setAttribute("class", "PopUpClose-button");
   //popUpCloseButton.setAttribute("textContent", "X")
@@ -159,7 +159,7 @@ function naytaTilasto(ruokala, popup){
 //Funktio poistaa html body:ä popUp ja popUpOverlay:n
 function closePopUp(){
   document.body.removeChild(popUp)
-  document.body.removeChild(popUpOverlay);  
+  document.body.removeChild(popUpOverlay);
 }
 
 function taustaNapit(){
