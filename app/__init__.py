@@ -32,6 +32,9 @@ def create_app(test_config=None):
     from . import post
     app.register_blueprint(post.bp)
 
+    # not so secure authentication
+    from . import authentication
+
     # Simple test page
     @app.route('/')
     def hello():
