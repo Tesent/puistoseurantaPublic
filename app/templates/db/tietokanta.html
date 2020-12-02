@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>{% block title %}Tietokanta{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<table>
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>laite_id</th>
+            <th>sisaan</th>
+            <th>aika</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for row in rows %}
+    <tr>
+        <td>{{ row['id'] }}</td>
+        <td>{{ row['laite_id'] }}</td>
+        <td>{{ row['sisaan'] }}</td>
+        <td>{{ row['aika'] }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

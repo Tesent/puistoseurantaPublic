@@ -1,0 +1,22 @@
+/* Spacing */
+table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+tbody td {
+    text-align: center;
+}
+
+th {
+    padding-bottom: 1em;
+    padding-right:  1em;
+    padding-left:   1em;
+}
+
+/*
+th, td {
+    padding: 1em
+}
+*/

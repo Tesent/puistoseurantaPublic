@@ -2,8 +2,24 @@
 import sqlite3
 
 import click
-from flask import current_app, g
+from flask import current_app, g, Blueprint, render_template
 from flask.cli import with_appcontext
+
+# Blueprint for easy viewing of the database
+bp = Blueprint('tietokanta', __name__, url_prefix='/tietokanta')
+
+
+# Testing
+@bp.route('/', methods=['GET'])
+def database():
+    db = get_db()
+    rows = db.execute(
+        'SELECT id, laite_id, sisaan, aika'
+        ' FROM sensor_data'
+        ' ORDER BY id DESC'
+    ).fetchall()
+
+    return render_template('db/tietokanta.html', rows=rows)
 
 def get_db():
     if 'db' not in g:

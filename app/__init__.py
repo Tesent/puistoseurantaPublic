@@ -27,6 +27,7 @@ def create_app(test_config=None):
     # database stuff
     from . import db
     db.init_app(app)
+    app.register_blueprint(db.bp)
 
     # Handling of data post
     from . import post
@@ -39,6 +40,5 @@ def create_app(test_config=None):
     @app.route('/')
     def hello():
         return render_template('Puistoseuranta.html')
-
 
     return app
