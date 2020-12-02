@@ -2,12 +2,6 @@ import VL53L1X
 import time
 import signal
 import sys
-import requests
-from requests.auth import HTTPBasicAuth
-from datetime import datetime
-
-#Requestin muuttujat
-url = "http://128.199.32.80/post_data/testi"
 
 INTER_MEASUREMENT_PERIOD_MILLIS = 70
 UPDATE_TIME_MICORS = 66000
@@ -64,14 +58,14 @@ time.sleep(0.1)
 while running:
     d1 = tof1.get_distance()
     d2 = tof2.get_distance()
-    if verrokki > d2:
-        toka = True
-    else:
-        toka = False
     if verrokki > d1:
         eka = True
     else:
         eka = False
+    if verrokki > d2:
+        toka = True
+    else:
+        toka = False
     
     if (eka, toka) != (False, False) and  not eka_tallessa:
         ensimmainen = (eka, toka)
@@ -80,22 +74,8 @@ while running:
     
     if (eka, toka) == (False, False) and eka_tallessa:
         if ensimmainen == (True, False) and viimeisin == (False, True):
-            myObj = {
-                'laite_id' : '123',
-                'sisaan' : '0',
-                'aika' : datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                }
-            x = requests.post(url, data=myObj, auth=HTTPBasicAuth('laite', 'VahvaSalausOnVahva'))
-            print(x)
             print("Out")
         if ensimmainen == (False, True) and viimeisin == (True, False):
-            myObj = {
-                'laite_id' : '123',
-                'sisaan' : '1',
-                'aika' : datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                }
-            x = requests.post(url, data=myObj, auth=HTTPBasicAuth('laite', 'VahvaSalausOnVahva'))
-            print(x)
             print("In")
         ensimmainen = (False, False)
         viimeisin = (False, False)
