@@ -13,13 +13,19 @@ bp = Blueprint('tietokanta', __name__, url_prefix='/tietokanta')
 @bp.route('/', methods=['GET'])
 def database():
     db = get_db()
-    rows = db.execute(
+    sensor_data = db.execute(
         'SELECT id, laite_id, sisaan, aika'
         ' FROM sensor_data'
         ' ORDER BY id DESC'
     ).fetchall()
 
-    return render_template('db/tietokanta.html', rows=rows)
+    laitteet = db.execute(
+        'SELECT id, sijainti'
+        ' FROM laite'
+        ' ORDER BY id DESC'
+    ).fetchall()
+
+    return render_template('db/tietokanta.html', sensor_data=sensor_data, laitteet=laitteet)
 
 def get_db():
     if 'db' not in g:

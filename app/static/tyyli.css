@@ -3,6 +3,7 @@ table {
     table-layout: fixed;
     border-collapse: collapse;
     border: 1px solid black;
+    padding-right: 1em;
 }
 
 tbody td {
@@ -15,8 +16,11 @@ th {
     padding-left:   1em;
 }
 
-/*
-th, td {
-    padding: 1em
+.taulukko_wrapper {
+    display: flex;
+    padding-right: 2em;
 }
-*/
+
+.sensor_data_table {
+    padding-right: 2em;
+}

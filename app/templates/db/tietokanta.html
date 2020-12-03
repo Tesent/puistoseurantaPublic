@@ -5,24 +5,51 @@
 {% endblock %}
 
 {% block content %}
-<table>
-    <thead>
-        <tr>
-            <th>id</th>
-            <th>laite_id</th>
-            <th>sisaan</th>
-            <th>aika</th>
-        </tr>
-    </thead>
-    <tbody>
-    {% for row in rows %}
-    <tr>
-        <td>{{ row['id'] }}</td>
-        <td>{{ row['laite_id'] }}</td>
-        <td>{{ row['sisaan'] }}</td>
-        <td>{{ row['aika'] }}</td>
-    </tr>
-    {% endfor %}
-    </tbody>
-</table>
+<!-- Taulukko sensor-data-taulua varten -->
+<div class="taulukko_wrapper">
+<div class="sensor_data_table">
+    <p><b>sensor_data</b></p>
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>laite_id</th>
+                <th>sisaan</th>
+                <th>aika</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in sensor_data %}
+            <tr>
+                <td>{{ row['id'] }}</td>
+                <td>{{ row['laite_id'] }}</td>
+                <td>{{ row['sisaan'] }}</td>
+                <td>{{ row['aika'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+
+    <!-- Taulukko laite-taulua varten -->
+    <div class="laite_table">
+        <p><b>laite</b></p>
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>sijainti</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in laitteet %}
+                <tr>
+                    <td>{{ row['id'] }}</td>
+                    <td>{{ row['sijainti'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</div>
+</div>
 {% endblock %}
