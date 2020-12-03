@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS laite;
 
 CREATE TABLE laite(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    sijainti TEXT NOT NULL
+    sijainti TEXT UNIQUE NOT NULL
 );
 
 CREATE TABLE sensor_data(
