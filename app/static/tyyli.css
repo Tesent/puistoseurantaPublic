@@ -24,3 +24,15 @@ th {
 .sensor_data_table {
     padding-right: 2em;
 }
+
+/* Style for error messages */
+.flash {
+    margin: 1em 0;
+    padding: 1em;
+    border: 1px solid #9a2ac9
+}
+
+.content > header {
+    display: flex;
+    align-items: flex-end;
+}

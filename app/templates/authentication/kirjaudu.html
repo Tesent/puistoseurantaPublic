@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>{% block title %}Kirjaudu{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<form class="kirjaudu" action="{{request.base_url}}" method="POST">
+        <p><label>Anna tunnus <input type="text" name="tunnus" /></label></p>
+        <p><label>Anna salasana <input type="password" name="salasana" /></label></p>
+        <p><input type="submit" name="laheta" value="Kirjaudu" /></p>
+</form>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>{% block title %}Uuden mittalaitteen lisääminen{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<form action="{{request.base_url}}" method="POST">
+    <p><label>Laitten tunnus (vaihtoehtoinen kenttä)<input type="text" name="tunnus" /></label></p>
+    <p><label>Laitteen sijainti <input type="text" name="sijainti" required="required" /></p></label>
+    <p><input type="submit" name="laheta" value="Lähetä" /></p>
+</form>
+
+{% if nayta %}
+<p>Laitteen lisäys onnistui. Uuden laitteen tunnus on <b>{{tunnus}}</b> ja sijainti <b>{{sijainti}}</b></p>
+{% endif %}
+{% endblock %}

@@ -3,13 +3,13 @@ from flask import (
 )
 
 from app.db import get_db
-from app.authentication import login_required
+from app.authentication import authentication_required
 
 bp = Blueprint('post', __name__, url_prefix='/post_data')
 
 # Test page for POST-method
 @bp.route('/testi', methods=['POST'])
-@login_required
+@authentication_required
 def post():
     db = get_db()
     laite_id = request.form.get("laite_id")
