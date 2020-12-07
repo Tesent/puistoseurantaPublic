@@ -37,27 +37,26 @@ def post():
 @authentication_required
 def tarkkailu():
     db = get_db()
+    laite_id  = request.form("laite_id")
     etaisyys1 = request.form.get("etaisyys1")
     etaisyys2 = request.form.get("etaisyys2")
     ip        = request.form.get("ip")
-    aika      = request.form.get("aika")
     error     = None
 
-    if not etaisyys1:
+    if not laite_id:
+        error = "Virheellinen laitteen tunnus"
+    elif not etaisyys1:
         error = "Ei ensimmäistä etäisyyttä"
     elif not etaisyys2:
         error = "Ei toista etäisyyttä"
     elif not ip:
         error = "Virheellinen ip-osoite"
-    elif not aika:
-        error = "Ei aikaa"
-
     # Jos kaikki on kunnossa lisätään laitteen tila tietokantaan
     if error is None:
         db.execute(
-            'INSERT INTO laitteen_tila (etaisyys1, etaisyys2, ip, aika)'
+            'INSERT INTO laitteen_tila (laite_id, etaisyys1, etaisyys2, ip)'
             ' VALUES (?, ?, ?, ?)',
-            (etaisyys1, etaisyys2, ip, aika)
+            (laite_id, etaisyys1, etaisyys2, ip)
         )
         db.commit()
         return "Kaikki OK!"
