@@ -86,13 +86,13 @@ eka_tallessa = False
 #Tehdaan tarkistuksia ja lahetetaan arvot palvelimelle
 tarkistus_mittaus = {
     'laite_id' : laite_id,
-    'etaisyys1' : 1,
+    'etaisyys1' : -1,
     'etaisyys2' : verrokki,
     'ip' : ip
 }
 
-x = requests.post(url_testimittaus, data=tarkistus_mittaus, auth=HTTPBasicAuth('laite', salaus))
-print(x)
+#x = requests.post(url_testimittaus, data=tarkistus_mittaus, auth=HTTPBasicAuth('laite', salaus))
+#print(x)
 
 #Tulostetaan verrattava arvo kalibrointia varten
 print(verrokki)
