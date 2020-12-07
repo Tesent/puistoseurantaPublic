@@ -9,26 +9,31 @@ from datetime import datetime
 #Requestin muuttujat
 url = "http://128.199.32.80/post_data/testi"
 
-INTER_MEASUREMENT_PERIOD_MILLIS = 70
-UPDATE_TIME_MICORS = 66000
+INTER_MEASUREMENT_PERIOD_MILLIS = 24
+TIMING_BUDGET = 20000
 
+#Alustetaan ensimmainen sensori
 tof1 = VL53L1X.VL53L1X(i2c_bus=1, i2c_address=0x28)
 tof1.open()
-tof2 = VL53L1X.VL53L1X(i2c_bus=1, i2c_address=0x2a)
-tof2.open()
 
 #Alustetaan ja asetetaan roi
-roi = VL53L1X.VL53L1xUserRoi(6,9,9,6)
-tof1.set_user_roi(roi)
-tof2.set_user_roi(roi)
+#                             x,y,x,y
+roi1 = VL53L1X.VL53L1xUserRoi(11,7,15,11)
+tof1.set_user_roi(roi1)
 
 #Asetetaan mittauksen vali
-tof1.set_timing(UPDATE_TIME_MICORS, INTER_MEASUREMENT_PERIOD_MILLIS)
-tof2.set_timing(UPDATE_TIME_MICORS, INTER_MEASUREMENT_PERIOD_MILLIS)
+tof1.set_timing(TIMING_BUDGET, INTER_MEASUREMENT_PERIOD_MILLIS)
 
 #Aloitetaan mittaaminen
-tof1.start_ranging(3)
-tof2.start_ranging(3)
+tof1.start_ranging(0)
+
+#Samat toiselle sensorille
+tof2 = VL53L1X.VL53L1X(i2c_bus=1, i2c_address=0x2a)
+tof2.open()
+roi2 = VL53L1X.VL53L1xUserRoi(0,7,4,11)
+tof2.set_user_roi(roi2)
+tof2.set_timing(TIMING_BUDGET, INTER_MEASUREMENT_PERIOD_MILLIS)
+tof2.start_ranging(0)
 
 #Apumuuttuja exit_handlerille ja while loopille
 running = True
@@ -45,7 +50,7 @@ def exit_handler(signal, frame):
 signal.signal(signal.SIGINT, exit_handler)
 
 #Otetaan verrattava arvio talteen
-verrokki = int(((tof1.get_distance()+tof2.get_distance())/2)*0.9)
+verrokki = int(((tof1.get_distance()+tof2.get_distance())/2)*0.8)
 
 #Apumuuttujat, joiden avulla tarkastellaan kuljettua jarjestysta
 eka = False
@@ -58,12 +63,13 @@ palautus = ((False, False),(False,False))
 
 eka_tallessa = False
 
+edellinen_aika = datetime.now()
+
 print(verrokki)
-time.sleep(0.1)
 
 while running:
-    d1 = tof1.get_distance()
     d2 = tof2.get_distance()
+    d1 = tof1.get_distance()
     if verrokki > d2:
         toka = True
     else:
@@ -88,7 +94,7 @@ while running:
             x = requests.post(url, data=myObj, auth=HTTPBasicAuth('laite', 'VahvaSalausOnVahva'))
             print(x)
             print("Out")
-        if ensimmainen == (False, True) and viimeisin == (True, False):
+        if (ensimmainen == (False, True) or ensimmainen == (True, True)) and (viimeisin == (True, False) or viimeisin == (True, True)):
             myObj = {
                 'laite_id' : '123',
                 'sisaan' : '1',
@@ -103,8 +109,11 @@ while running:
     
     if (eka, toka) != (False, False):
         viimeisin = (eka, toka)
+        print(viimeisin)
     
-    #print("1: {}, 2: {}".format(d1,d2))
-    
+    #uusi_aika = datetime.now()
+    #print("\r 1: {}, 2: {}, aika:{}".format(d1,d2,uusi_aika-edellinen_aika))
+    #print(uusi_aika-edellinen_aika)
+    #edellinen_aika = uusi_aika
         
     time.sleep(INTER_MEASUREMENT_PERIOD_MILLIS/1000)
