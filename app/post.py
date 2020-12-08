@@ -40,7 +40,6 @@ def tarkkailu():
     laite_id  = request.form.get("laite_id")
     etaisyys1 = request.form.get("etaisyys1")
     etaisyys2 = request.form.get("etaisyys2")
-    ip        = request.form.get("ip")
     error     = None
 
     if not laite_id:
@@ -49,13 +48,12 @@ def tarkkailu():
         error = "Ei ensimmäistä etäisyyttä"
     elif not etaisyys2:
         error = "Ei toista etäisyyttä"
-    elif not ip:
-        error = "Virheellinen ip-osoite"
+
     # Jos kaikki on kunnossa lisätään laitteen tila tietokantaan
     if error is None:
         db.execute(
-            'INSERT INTO laitteen_tila (laite_id, etaisyys1, etaisyys2, ip) VALUES (?, ?, ?, ?)',
-            (laite_id, etaisyys1, etaisyys2, ip)
+            'INSERT INTO laitteen_tila (laite_id, etaisyys1, etaisyys2) VALUES (?, ?, ?)',
+            (laite_id, etaisyys1, etaisyys2)
         )
         db.commit()
         return "Kaikki OK!"

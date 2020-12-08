@@ -20,7 +20,6 @@ CREATE TABLE laitteen_tila(
     laite_id INTEGER NOT NULL,
     etaisyys1 INTEGER NOT NULL,
     etaisyys2 INTEGER NOT NULL,
-    ip TEXT NOT NULL,
     aika TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (laite_id) REFERENCES laite(id)
 );
