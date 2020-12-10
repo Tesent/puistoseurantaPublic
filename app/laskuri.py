@@ -23,7 +23,7 @@ def select_rivit(yhteys):
 
 
 def main():           
-    tk = "../instance/app.sqlite"
+    tk = "instance/app.sqlite"
     yhteys = yhdista(tk)
     with yhteys:
         hetkellinen=select_rivit(yhteys)
