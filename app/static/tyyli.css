@@ -1,0 +1,38 @@
+/* Spacing */
+table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    border: 1px solid black;
+    padding-right: 1em;
+}
+
+tbody td {
+    text-align: center;
+}
+
+th {
+    padding-bottom: 1em;
+    padding-right:  1em;
+    padding-left:   1em;
+}
+
+.taulukko_wrapper {
+    display: flex;
+    padding-right: 2em;
+}
+
+.sensor_data_table {
+    padding-right: 2em;
+}
+
+/* Style for error messages */
+.flash {
+    margin: 1em 0;
+    padding: 1em;
+    border: 1px solid #9a2ac9
+}
+
+.content > header {
+    display: flex;
+    align-items: flex-end;
+}
