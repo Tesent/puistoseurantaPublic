@@ -32,8 +32,7 @@ def main():
     yhteys = yhdista(tk)
     with yhteys:
         hetkellinen=select_rivit(yhteys)
-#  print(hetkellinen)
-     return hetkellinen
+    return hetkellinen
  #    return int(42)
         
 if __name__ == '__main__':
