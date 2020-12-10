@@ -37,14 +37,19 @@ def create_app(test_config=None):
     from . import authentication
     app.register_blueprint(authentication.bp)
 
+
     # Maintance of the devices
     from . import yllapito
     app.register_blueprint(yllapito.bp)
 
+    # Laskee viiden minuutin sisällä sisään menneet henkilöt
+    from . import laskuri
+    
     # Simple test page
     @app.route('/')
     def hello():
-        return render_template('Puistoseuranta.html')
+        ruuhka = laskuri.main()
+        return render_template('Puistoseuranta.html', ruuhka=ruuhka)
 
     # Addition of new measurement devices
     @app.route('/lisaa', methods=['GET', 'POST'])

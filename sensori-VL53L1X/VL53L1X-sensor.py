@@ -2,6 +2,8 @@ import VL53L1X
 import time
 import signal
 import sys
+<<<<<<< HEAD
+=======
 import requests
 import subprocess
 from requests.auth import HTTPBasicAuth
@@ -14,6 +16,7 @@ url_testimittaus = "http://128.199.32.80/post_data/tarkkailu"
 salaus = "VahvaSalausOnVahva"
 laite_id = 123
 ip = subprocess.check_output(['hostname', '-I']).split(" ")[0]
+>>>>>>> e45a4193b13dea46fd3e31f1ccb183b92f585a70
 
 #Apumuuttujia tarkistusmittauksen lahettamisen ajastusta varten
 edellinen_aika = datetime.now()
@@ -86,13 +89,13 @@ eka_tallessa = False
 #Tehdaan tarkistuksia ja lahetetaan arvot palvelimelle
 tarkistus_mittaus = {
     'laite_id' : laite_id,
-    'etaisyys1' : 1,
+    'etaisyys1' : -1,
     'etaisyys2' : verrokki,
     'ip' : ip
 }
 
-x = requests.post(url_testimittaus, data=tarkistus_mittaus, auth=HTTPBasicAuth('laite', salaus))
-print(x)
+#x = requests.post(url_testimittaus, data=tarkistus_mittaus, auth=HTTPBasicAuth('laite', salaus))
+#print(x)
 
 #Tulostetaan verrattava arvo kalibrointia varten
 print(verrokki)
@@ -101,6 +104,8 @@ print(verrokki)
 while running:
     #Haetaan antureiden mittaama etaisyys
     d2 = tof2.get_distance()
+<<<<<<< HEAD
+=======
     d1 = tof1.get_distance()
     
     #Jos aiemmin laskettu verrokki arvo on suurempi kuin mitattu tulos ->
@@ -111,10 +116,15 @@ while running:
         toka = False
     
     #Sama vertailu anturille d1
+>>>>>>> e45a4193b13dea46fd3e31f1ccb183b92f585a70
     if verrokki > d1:
         eka = True
     else:
         eka = False
+    if verrokki > d2:
+        toka = True
+    else:
+        toka = False
     
     #Jos eka_tallessa ei ole tallessa (ensimmaista havaintoa ei ole tehty), niin viedaan
     #mittauksen tulokset apumuuttujiin
@@ -130,6 +140,10 @@ while running:
         #Jos nama ehdot toteutuvat -> joku on kulkenut d1 -> d2 suuntaisesti
         #viedaan mittatulos serverille
         if ensimmainen == (True, False) and viimeisin == (False, True):
+<<<<<<< HEAD
+            print("Out")
+        if ensimmainen == (False, True) and viimeisin == (True, False):
+=======
             #myObj = {
             #    'laite_id' : laite_id,
             #    'sisaan' : '0',
@@ -148,6 +162,7 @@ while running:
             #    }
             #x = requests.post(url, data=myObj, auth=HTTPBasicAuth('laite', salaus))
             #print(x)
+>>>>>>> e45a4193b13dea46fd3e31f1ccb183b92f585a70
             print("In")
         #lopuksi nollataan apumuuttujat uusia havaintoja varten
         ensimmainen = (False, False)
