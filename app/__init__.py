@@ -37,6 +37,10 @@ def create_app(test_config=None):
     from . import authentication
     app.register_blueprint(authentication.bp)
 
+    # Maintance of the devices
+    from . import yllapito
+    app.register_blueprint(yllapito.bp)
+
     # Simple test page
     @app.route('/')
     def hello():
@@ -58,7 +62,7 @@ def create_app(test_config=None):
                 'SELECT id FROM laite WHERE sijainti = ?', (sijainti,)
             ).fetchone() is not None:
                 error = 'Sijainti {} löytyy jo tietokannasta'.format(sijainti)
-            elif tunnus is not None:
+            elif tunnus != "":
                 if database.execute(
                     'SELECT id FROM laite WHERE id = ?', (tunnus,)
                 ).fetchone() is not None:

@@ -56,7 +56,7 @@ def login():
 
         if error is None:
             session['kirjautunut'] = "ok"
-            return redirect(url_for('lisays'))
+            return redirect(url_for('yllapito.index'))
 
         flash(error)
 

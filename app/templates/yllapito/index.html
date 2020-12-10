@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>{% block title %}Ylläpito{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<!-- Uuden mittalaitteen lisäys-->
+<div>
+    <h2>Uuden mittalaitteen lisääminen</h2>
+    <form action="{{request.base_url}}" method="POST">
+        <p><label>Laitten tunnus (vaihtoehtoinen kenttä)<input type="text" name="tunnus" /></label></p>
+        <p><label>Laitteen sijainti <input type="text" name="sijainti" required="required" /></p></label>
+        <p><input type="submit" name="laheta" value="Lähetä" /></p>
+    </form>
+
+    {% if nayta_lisays %}
+    <p>Laitteen lisäys onnistui. Uuden laitteen tunnus on <b>{{ tunnus }}</b>
+    ja laitteen sijainti <b>{{ sijainti }}</b></p>
+    {% endif %}
+</div>
+
+<!-- Mittalaitteiden listaus -->
+<div>
+    <img src="{{ url_for('static', filename='/img/delete-24px.svg') }}" alt="Poista" />
+    <h2>Mittalaitteet</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>sijainti</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in laitteet %}
+            <tr>
+                <td>{{ row['id'] }}</td>
+                <td>{{ row['sijainti'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
