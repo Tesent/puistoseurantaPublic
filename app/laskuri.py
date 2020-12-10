@@ -14,7 +14,8 @@ def yhdista(data):
     
 def select_rivit(yhteys):
     nyt = datetime.now()
-    viisi = timedelta(minutes=5)                                                    nyt = nyt-viisi
+    viisi = timedelta(minutes=5) 
+    nyt = nyt-viisi
     stime = nyt.strftime("%Y-%m-%d %H:%M:%S")
     cur = yhteys.curso()
     komento="SELECT COUNT(aika) FROM sensor_data WHERE sisaan == 1 AND Datetime(aika)>=Datetime('now','+2 hours', '-5 minutes')"
@@ -28,7 +29,8 @@ def main():
     yhteys = yhdista(tk)
     with yhteys:
         hetkellinen=select_rivit(yhteys)
-        print(hetkellinen)                                                          return hetkellinen
+  #  print(hetkellinen)
+  return hetkellinen
         #    return int(42)
         
 if __name__ == '__main__':
